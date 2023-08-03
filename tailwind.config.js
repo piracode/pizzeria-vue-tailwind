@@ -6,10 +6,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        redCustom: '#CD2F2B',
+        redCustom: '#E48181',
         blackCustom: '#1C1A1A',
         lightGrey: '#4D4545',
-        orangeCTA: '#E64A19',
+        orangeCTA: '#BF360C;',
+        // orangeNumber: '#E64A19',
       },
     },
   },

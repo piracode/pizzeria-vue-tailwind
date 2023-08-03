@@ -45,7 +45,7 @@
         <ul
           v-if="menuOpen"
           key="menu"
-          class="links absolute top-20 left-1/2 transform -translate-x-1/2 bg-blackCustom w-screen flex flex-col items-center text-white font-bold gap-4"
+          class="links absolute top-20 left-1/2 transform -translate-x-1/2 bg-blackCustom w-screen flex flex-col items-center text-white font-bold gap-4 z-50"
         >
           <!-- Navigation Links -->
           <li class="pt-8"><a href="#">Promoción</a></li>
@@ -54,7 +54,9 @@
           <li><a href="#">Crêpes</a></li>
           <li><a href="#">Postres</a></li>
           <li><a href="#">Ubicación</a></li>
-          <li class="bg-orangeCTA pt-2 pb-2 pr-4 pl-4 rounded-2xl mt-8 mb-12">
+          <li
+            class="bg-orangeCTA pt-2 pb-2 pr-4 pl-4 rounded-2xl mt-8 mb-12 font-playfair-500 text-xl"
+          >
             <a href="#" class="flex items-center">
               <span class="mr-2">Nuestras pizzas</span>
               <RightArrowSVG class="w-4 h-4" />

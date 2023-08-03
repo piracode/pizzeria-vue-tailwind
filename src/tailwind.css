@@ -7,6 +7,7 @@
 @layer base {
   html {
     font-family: 'Lato', sans-serif;
+    letter-spacing: 0.08em;
   }
 
   h1,
@@ -21,6 +22,42 @@
   font-family: 'Lato', sans-serif;
 }
 
+.font-lato-300 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+.font-lato-400 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+.font-lato-700 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+}
+.font-lato-900 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+}
+
 .font-playfair {
   font-family: 'Playfair Display', serif;
+}
+
+.font-playfair-500 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+
+.hero-p-2,
+.hero-p-3 {
+  padding-bottom: 1rem;
+}
+
+.hero-p {
+  font-weight: 700;
+}
+
+.hero-p-4 {
+  text-align: center;
+  padding-bottom: 2rem;
 }

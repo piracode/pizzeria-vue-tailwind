@@ -19,12 +19,11 @@ export default {
     axios
       .get('https://martha.codes/pizzeria/wp-json/wp/v2/pages/97')
       .then((response) => {
-        console.log(response.data) // Log the response data
-        this.welcomeMessageTitle = response.data.acf.bienvenidos // Set the welcome message
-        this.welcomeMessageDescription = response.data.acf.mensaje_de_bienvenida // Set the welcome message description
+        this.welcomeMessageTitle = response.data.acf.bienvenidos
+        this.welcomeMessageDescription = response.data.acf.mensaje_de_bienvenida
       })
       .catch((error) => {
-        console.error(error) // Log any errors
+        console.error(error)
       })
   },
 }
