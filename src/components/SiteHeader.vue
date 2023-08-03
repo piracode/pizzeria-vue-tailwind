@@ -1,0 +1,33 @@
+<template>
+  <section class="text-white mt-8 px-6 pb-8">
+    <h1 class="pb-4 font-lato text-xl">{{ welcomeMessageTitle }}</h1>
+    <p>{{ welcomeMessageDescription }}</p>
+  </section>
+</template>
+
+<script>
+import axios from 'axios'
+export default {
+  data() {
+    return {
+      welcomeMessageTitle: '', // Initialize an empty string for the welcome message
+      welcomeMessageDescription: '', // Initialize an empty string for the welcome message description
+    }
+  },
+  mounted() {
+    // Make the GET request using axios
+    axios
+      .get('https://martha.codes/pizzeria/wp-json/wp/v2/pages/97')
+      .then((response) => {
+        console.log(response.data) // Log the response data
+        this.welcomeMessageTitle = response.data.acf.bienvenidos // Set the welcome message
+        this.welcomeMessageDescription = response.data.acf.mensaje_de_bienvenida // Set the welcome message description
+      })
+      .catch((error) => {
+        console.error(error) // Log any errors
+      })
+  },
+}
+</script>
+
+<style scoped></style>
