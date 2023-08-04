@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,500;0,800;1,400;1,500;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:wght@400;500;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -15,6 +15,24 @@
   h3,
   h4 {
     font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  h1 {
+    @apply text-[1.9rem] xl:text-[2.75rem];
+  }
+
+  h2 {
+    @apply text-[1.5rem] xl:text-[1.9rem];
+  }
+
+  h3 {
+    @apply text-[1.3rem] xl:text-[1.4rem];
+  }
+
+  h4 {
+    @apply text-[1.2rem] xl:text-[1.3rem];
   }
 }
 
@@ -46,6 +64,31 @@
 .font-playfair-500 {
   font-family: 'Playfair Display', serif;
   font-weight: 500;
+}
+
+.font-playfair-500 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+
+.font-playfair-italic-500 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+}
+.font-playfair-400 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+}
+
+.font-playfair-700 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+.font-playfair-900 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
 }
 
 .hero-p-2,

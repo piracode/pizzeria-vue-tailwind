@@ -1,7 +1,7 @@
 <template>
   <section class="relative background-image flex justify-center items-center">
     <div class="relative z-10 p-8 text-black bg-hero max-w-sm rounded-lg">
-      <h2 class="text-xl uppercase text-center font-bold mb-10">
+      <h2 class="text-xl text-center font-bold mb-10">
         {{ heroTitle }}
       </h2>
       <div class="mb-6" v-html="heroDescription"></div>
@@ -28,7 +28,6 @@ export default {
       heroDescription: '',
     }
   },
-  methods: {},
   components: {
     RightArrowSVG,
   },
@@ -36,7 +35,7 @@ export default {
     axios
       .get('https://martha.codes/pizzeria/wp-json/wp/v2/pages/103')
       .then((response) => {
-        console.log(response.data)
+        // console.log(response.data)
         this.heroTitle = response.data.acf.titulo_seccion_promocion
         this.heroDescription = response.data.acf.descripcion
       })
