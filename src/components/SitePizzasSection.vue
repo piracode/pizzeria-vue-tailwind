@@ -36,7 +36,7 @@
           <label for="pizzaOption" class="flex justify-center items-center pb-2"
             >Seleccionar precios:
           </label>
-          <div class="flex justify-center items-center">
+          <div class="flex justify-center items-center pb-2">
             <select
               v-model="pizza.selectedOption"
               class="bg-aboutBg text-white rounded p-2"
@@ -46,12 +46,15 @@
             </select>
           </div>
         </div>
-        <h3>{{ pizza.name }}</h3>
-        <div
-          v-html="pizza.ingredients"
-          class="pizza-ingredients pb-4"
-          id="pizza-ingredients"
-        ></div>
+
+        <h3 class="pb-2">{{ pizza.name }}</h3>
+        <div class="test">
+          <div
+            v-html="pizza.ingredients"
+            class="pizza-ingredients pb-4"
+            id="pizza-ingredients"
+          ></div>
+        </div>
         <p
           v-if="pizza.selectedOption === 'eatIn'"
           class="py-2 font-bold text-lg"
@@ -136,7 +139,7 @@ export default {
         'https://martha.codes/pizzeria/wp-json/wp/v2/pizza?categoria-de-pizza=2&per_page=100'
       )
       .then((response) => {
-        console.log(response.data)
+        // console.log(response.data)
         // Extract the unique category IDs from the response
         const categoryIds = [
           //spread ooperator to create a new array + new Set to remove duplicate
@@ -196,15 +199,22 @@ export default {
 
 <style scoped>
 /* Find a way to add the disc - maybe change the CMS layout */
-/* .pizza-ingredients {
+.pizza-ingredients {
   padding-left: 20px;
 }
 
-div#pizza-ingredients ul li {
+.test div#pizza-ingredients ul {
   list-style-type: disc;
-} */
+}
+.test .pizza-ingredients ul {
+  list-style-type: disc;
+}
 
-/* .pizza-section .stars {
+.test ul.pizza-ingredients {
+  list-style-type: disc;
+}
+
+.test .pizza-section .stars {
   color: red;
-} */
+}
 </style>
