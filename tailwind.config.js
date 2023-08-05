@@ -14,6 +14,7 @@ module.exports = {
         pizzasBg: '#006400',
         pizzaCardBg: '#F3EEC1',
         crepesBg: '#2A9639',
+        postresBg: '#327B3C',
       },
     },
   },

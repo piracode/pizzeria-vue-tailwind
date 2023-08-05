@@ -4,7 +4,8 @@
     <SiteHero />
     <SiteAbout />
     <SitePizzasSection />
-    <siteCrepesSection />
+    <SiteCrepesSection />
+    <SitePostresSection />
   </div>
 </template>
 
@@ -14,6 +15,7 @@ import SiteHero from './components/SiteHero.vue'
 import SiteAbout from './components/SiteAbout.vue'
 import SitePizzasSection from './components/SitePizzasSection.vue'
 import SiteCrepesSection from './components/SiteCrepesSection.vue'
+import SitePostresSection from './components/SitePostresSection.vue'
 </script>
 
 <style scoped></style>
