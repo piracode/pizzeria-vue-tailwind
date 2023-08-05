@@ -67,7 +67,7 @@ export default {
     axios
       .get('https://martha.codes/pizzeria/wp-json/wp/v2/pages/101')
       .then((response) => {
-        console.log(response.data)
+        // console.log(response.data)
         this.passionTitle = response.data.acf.titulo_1
         this.passionDescription = response.data.acf.descripcion_1
         this.qualityTitle = response.data.acf.titulo_2

@@ -11,6 +11,8 @@ module.exports = {
         lightGrey: '#4D4545',
         orangeCTA: '#BF360C',
         aboutBg: '#062315',
+        pizzasBg: '#006400',
+        pizzaCardBg: '#F3EEC1',
       },
     },
   },
