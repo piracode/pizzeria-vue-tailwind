@@ -7,10 +7,20 @@
         <h3 class="pb-4">Explorar</h3>
         <ul>
           <!-- Navigation Links -->
-          <li><a href="#">Pizzas</a></li>
-          <li><a href="#">Crêpes</a></li>
-          <li><a href="#">Postres</a></li>
-          <li><a href="#">Promoción</a></li>
+          <li>
+            <a href="#pizzas" @click="scrollToSection('#pizzas')">Pizzas</a>
+          </li>
+          <li>
+            <a href="#crepes" @click="scrollToSection('#crepes')">Crêpes</a>
+          </li>
+          <li>
+            <a href="#postres" @click="scrollToSection('#postres')">Postres</a>
+          </li>
+          <li>
+            <a href="#promocion" @click="scrollToSection('#promocion')"
+              >Promoción</a
+            >
+          </li>
         </ul>
       </nav>
       <article class="horarios pb-8">
@@ -78,12 +88,19 @@
 </template>
 
 <script>
+import { scrollWithOffset } from '@/components/scrollUtils.js'
+
 export default {
   data() {
     return {
-      mapIframe:
-        '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d763.1235565039603!2d0.1411763349804166!3d40.08669257288649!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9a3d171828fa2bda!2sPizzeria+L\'Arena!5e0!3m2!1ses!2sar!4v1522416723208" width="1920" height="200" frameborder="0" zoom="16" style="border:0; max-width: 100% !important;" allowfullscreen=""></iframe>',
+      mapIframe: '<iframe src="..." frameborder="0" allowfullscreen></iframe>',
+      headerOffset: 160,
     }
+  },
+  methods: {
+    scrollToSection(sectionId) {
+      scrollWithOffset(sectionId, this.headerOffset)
+    },
   },
 }
 </script>

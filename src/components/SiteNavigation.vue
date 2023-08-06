@@ -52,15 +52,37 @@
           >
             <!-- Navigation Links -->
             <li class="pt-8">
-              <a href="#promocion" @click="closeMenu">Promoción</a>
+              <a href="#promocion" @click="closeMenuAndScroll('#promocion')"
+                >Promoción</a
+              >
             </li>
             <li>
-              <a href="#quienes-somos" @click="closeMenu">Quienes Somos</a>
+              <a
+                href="#quienes-somos"
+                @click="closeMenuAndScroll('#quienes-somos')"
+                >Quienes Somos</a
+              >
             </li>
-            <li><a href="#pizzas" @click="closeMenu">Pizzas</a></li>
-            <li><a href="#crepes" @click="closeMenu">Crêpes</a></li>
-            <li><a href="#postres" @click="closeMenu">Postres</a></li>
-            <li><a href="#ubicacion" @click="closeMenu">Ubicación</a></li>
+            <li>
+              <a href="#pizzas" @click="closeMenuAndScroll('#pizzas')"
+                >Pizzas</a
+              >
+            </li>
+            <li>
+              <a href="#crepes" @click="closeMenuAndScroll('#crepes')"
+                >Crêpes</a
+              >
+            </li>
+            <li>
+              <a href="#postres" @click="closeMenuAndScroll('#postres')"
+                >Postres</a
+              >
+            </li>
+            <li>
+              <a href="#ubicacion" @click="closeMenuAndScroll('#ubicacion')"
+                >Ubicación</a
+              >
+            </li>
             <li
               class="bg-orangeCTA pt-2 pb-2 pr-4 pl-4 rounded-2xl mt-8 mb-12 font-playfair-500 text-xl"
             >
@@ -81,12 +103,14 @@
 import SiteHeader from '@/components/SiteHeader.vue'
 import PhoneSVGIcon from '@/components/PhoneSVGIcon.vue'
 import RightArrowSVG from '@/components/RightArrowSVG.vue'
+import { scrollWithOffset } from '@/components/scrollUtils.js'
 
 export default {
   data() {
     return {
       menuOpen: false,
       placeholderHeight: 0,
+      headerOffset: 160,
     }
   },
   mounted() {
@@ -96,10 +120,12 @@ export default {
     toggleMenu() {
       this.menuOpen = !this.menuOpen
     },
-    closeMenu() {
+    closeMenuAndScroll(sectionId) {
       this.menuOpen = false
+      scrollWithOffset(sectionId, this.headerOffset)
     },
   },
+
   components: {
     PhoneSVGIcon,
     SiteHeader,
