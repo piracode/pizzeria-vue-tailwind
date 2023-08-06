@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-pizzasBg text-white pb-8 pizza-section">
+  <section class="bg-pizzasBg text-white pb-8 pizza-section" id="pizzas">
     <h2 class="text-center p-12">Pizzas</h2>
     <div class="text-black">
       <!-- Dropdown to select category -->

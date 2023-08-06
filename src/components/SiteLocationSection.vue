@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-locationBg">
+  <section class="bg-locationBg" id="ubicacion">
     <h2 class="text-center py-12">Ubicación</h2>
     <p class="text-2xl font-bold text-center font-playfair pb-12 text-aboutBg">
       Pizzería l'Arena

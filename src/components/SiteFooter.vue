@@ -15,7 +15,7 @@
       </nav>
       <article class="horarios pb-8">
         <h3 class="">Horario</h3>
-        <p class="pb-4">(Junio a Septiembre)</p>
+        <p class="pb-4">(de Junio a Septiembre)</p>
         <div>
           <div>
             <time datetime="00:00" class="block pb-2">Lunes (cerrado)</time>

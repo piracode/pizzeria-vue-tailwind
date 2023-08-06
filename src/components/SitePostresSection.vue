@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-postresBg text-white pb-8">
+  <section class="bg-postresBg text-white pb-8" id="postres">
     <h2 class="text-center py-12">Nuestros postres</h2>
 
     <article

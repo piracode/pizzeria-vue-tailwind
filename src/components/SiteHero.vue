@@ -1,5 +1,8 @@
 <template>
-  <section class="relative background-image flex justify-center items-center">
+  <section
+    class="relative background-image flex justify-center items-center"
+    id="promocion"
+  >
     <div class="relative z-10 p-8 text-black bg-hero max-w-sm rounded-lg">
       <h2 class="text-xl text-center font-bold mb-10">
         {{ heroTitle }}

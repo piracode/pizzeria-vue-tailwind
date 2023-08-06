@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-aboutBg text-white">
+  <section class="bg-aboutBg text-white" id="quienes-somos">
     <h2 class="text-center p-12">Quienes Somos</h2>
     <article class="">
       <PizzaSVG class="mx-auto" />

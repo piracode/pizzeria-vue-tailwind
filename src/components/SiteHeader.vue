@@ -1,5 +1,5 @@
 <template>
-  <section class="text-white mt-8 px-6 pb-8">
+  <section class="text-white mt-6 px-6 pb-8">
     <h1 class="pb-4 font-lato text-xl no-uppercase">
       {{ welcomeMessageTitle }}
     </h1>
