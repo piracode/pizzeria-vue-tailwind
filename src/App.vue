@@ -7,6 +7,7 @@
     <SiteCrepesSection />
     <SitePostresSection />
     <SiteLocationSection />
+    <SiteFooter />
   </div>
 </template>
 
@@ -19,6 +20,8 @@ import SiteCrepesSection from './components/SiteCrepesSection.vue'
 import SitePostresSection from './components/SitePostresSection.vue'
 
 import SiteLocationSection from './components/SiteLocationSection.vue'
+
+import SiteFooter from './components/SiteFooter.vue'
 </script>
 
 <style scoped></style>
