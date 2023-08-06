@@ -6,6 +6,7 @@
     <SitePizzasSection />
     <SiteCrepesSection />
     <SitePostresSection />
+    <SiteLocationSection />
   </div>
 </template>
 
@@ -16,6 +17,8 @@ import SiteAbout from './components/SiteAbout.vue'
 import SitePizzasSection from './components/SitePizzasSection.vue'
 import SiteCrepesSection from './components/SiteCrepesSection.vue'
 import SitePostresSection from './components/SitePostresSection.vue'
+
+import SiteLocationSection from './components/SiteLocationSection.vue'
 </script>
 
 <style scoped></style>

@@ -198,23 +198,13 @@ export default {
 </script>
 
 <style scoped>
-/* Find a way to add the disc - maybe change the CMS layout */
-.pizza-ingredients {
-  padding-left: 20px;
+::v-deep .pizza-ingredients ul {
+  list-style-type: disc;
+  margin-left: 2.25rem;
 }
 
-.test div#pizza-ingredients ul {
-  list-style-type: disc;
-}
-.test .pizza-ingredients ul {
-  list-style-type: disc;
-}
-
-.test ul.pizza-ingredients {
-  list-style-type: disc;
-}
-
-.test .pizza-section .stars {
+::v-deep .star {
   color: red;
+  font-weight: bold;
 }
 </style>
