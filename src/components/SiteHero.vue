@@ -10,7 +10,8 @@
       <div class="mb-6" v-html="heroDescription"></div>
       <div class="flex justify-center">
         <a
-          href="#"
+          href="#pizzas"
+          @click="scrollToSection('#pizzas')"
           class="bg-orangeCTA pt-2 pb-2 pr-4 pl-4 rounded-2xl flex items-center text-white font-playfair-500 text-xl"
         >
           <span class="mr-2">Nuestras pizzas</span>
@@ -24,15 +25,22 @@
 <script>
 import axios from 'axios'
 import RightArrowSVG from '@/components/RightArrowSVG.vue'
+import { scrollWithOffset } from '@/components/scrollUtils.js'
 export default {
   data() {
     return {
       heroTitle: '',
       heroDescription: '',
+      headerOffset: 160,
     }
   },
   components: {
     RightArrowSVG,
+  },
+  methods: {
+    scrollToSection(sectionId) {
+      scrollWithOffset(sectionId, this.headerOffset)
+    },
   },
   mounted() {
     axios

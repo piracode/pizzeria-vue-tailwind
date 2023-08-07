@@ -86,7 +86,11 @@
             <li
               class="bg-orangeCTA pt-2 pb-2 pr-4 pl-4 rounded-2xl mt-8 mb-12 font-playfair-500 text-xl"
             >
-              <a href="#pizzas-section" class="flex items-center">
+              <a
+                href="#pizzas"
+                @click="closeMenuAndScroll('#pizzas')"
+                class="flex items-center"
+              >
                 <span class="mr-2">Nuestras pizzas</span>
                 <RightArrowSVG class="w-4 h-4" />
               </a>

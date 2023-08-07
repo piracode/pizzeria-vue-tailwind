@@ -1,11 +1,11 @@
 <template>
-  <section class="bg-locationBg" id="ubicacion">
+  <section class="bg-locationBg pb-12" id="ubicacion">
     <h2 class="text-center py-12">Ubicación</h2>
     <p class="text-2xl font-bold text-center font-playfair pb-12 text-aboutBg">
       Pizzería l'Arena
     </p>
     <!-- Phone Icon SVG -->
-    <div class="flex items-center justify-center">
+    <div class="flex items-center justify-center pb-2">
       <svg
         class="icon"
         xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +22,7 @@
       <a href="tel:+34964313991">964 31 39 91</a>
     </div>
     <!-- Location Icon SVG -->
-    <div class="flex items-center justify-center">
+    <div class="flex items-center justify-center pb-2">
       <svg
         class="icon"
         xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +39,7 @@
       Avenida del Faro 42, <span class="block">Oropesa del Mar</span>
     </address>
     <!-- Email Icon SVG -->
-    <div class="flex items-center justify-center">
+    <div class="flex items-center justify-center pb-2">
       <svg
         class="icon"
         xmlns="http://www.w3.org/2000/svg"
@@ -57,8 +57,7 @@
         >annieymanuel@pizzerialarena.es</a
       >
     </div>
-
-    <div v-html="mapIframe" class="p-4"></div>
+    <div v-html="mapIframe" class="p-4 iframe"></div>
   </section>
 </template>
 
@@ -67,7 +66,7 @@ export default {
   data() {
     return {
       mapIframe:
-        '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d763.1235565039603!2d0.1411763349804166!3d40.08669257288649!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9a3d171828fa2bda!2sPizzeria+L\'Arena!5e0!3m2!1ses!2sar!4v1522416723208" width="1920" height="200" frameborder="0" zoom="16" style="border:0; max-width: 100% !important;" allowfullscreen=""></iframe>',
+        '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d763.1235565039603!2d0.1411763349804166!3d40.08669257288649!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9a3d171828fa2bda!2sPizzeria+L\'Arena!5e0!3m2!1ses!2sar!4v1522416723208" class="iframe" width="1920" height="300" frameborder="0" zoom="16" style="border:0; max-width: 100% !important;" allowfullscreen=""></iframe>',
     }
   },
   components: {},
@@ -77,5 +76,10 @@ export default {
 <style scoped>
 .icon path {
   fill: #e64a19;
+}
+
+.iframe {
+  max-width: 650px;
+  margin: 0 auto;
 }
 </style>

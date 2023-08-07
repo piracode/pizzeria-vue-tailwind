@@ -1,9 +1,9 @@
 <template>
-  <section class="bg-pizzasBg text-white pb-8 pizza-section" id="pizzas">
+  <section class="bg-pizzasBg text-white pb-10 pizza-section" id="pizzas">
     <h2 class="text-center p-12">Pizzas</h2>
     <div class="text-black">
       <!-- Dropdown to select category -->
-      <div class="mb-6">
+      <div class="mb-6 sm:flex sm:gap-6 justify-center">
         <label
           for="categorySelect"
           class="flex justify-center items-center text-white pb-2"
@@ -27,60 +27,84 @@
       </div>
 
       <!-- Pizza Card -->
-      <article
-        v-for="pizza in filteredPizzas"
-        :key="pizza.name"
-        class="p-4 m-4 bg-pizzaCardBg rounded-md drop-shadow-md"
-      >
-        <div class="pb-4">
-          <label for="pizzaOption" class="flex justify-center items-center pb-2"
-            >Seleccionar precios:
-          </label>
-          <div class="flex justify-center items-center pb-2">
-            <select
-              v-model="pizza.selectedOption"
-              class="bg-aboutBg text-white rounded p-2"
-            >
-              <option value="eatIn">Comedor</option>
-              <option value="toGo">Para llevar</option>
-            </select>
+      <div class="lg:grid lg:grid-cols-2">
+        <article
+          v-for="pizza in filteredPizzas"
+          :key="pizza.name"
+          class="p-4 m-4 bg-pizzaCardBg rounded-md drop-shadow-md"
+        >
+          <!-- Select prices dropdown menu -->
+          <div class="pb-4 sm:flex sm:gap-6 justify-center sm:pb-8">
+            <label
+              for="pizzaOption"
+              class="flex justify-center items-center pb-2"
+              >Seleccionar precios:
+            </label>
+            <div class="flex justify-center items-center pb-2">
+              <select
+                v-model="pizza.selectedOption"
+                class="bg-aboutBg text-white rounded p-2"
+              >
+                <option value="eatIn">Comedor</option>
+                <option value="toGo">Para llevar</option>
+              </select>
+            </div>
           </div>
-        </div>
 
-        <h3 class="pb-2">{{ pizza.name }}</h3>
-        <div class="test">
-          <div
-            v-html="pizza.ingredients"
-            class="pizza-ingredients pb-4"
-            id="pizza-ingredients"
-          ></div>
-        </div>
-        <p
-          v-if="pizza.selectedOption === 'eatIn'"
-          class="py-2 font-bold text-lg"
-        >
-          Grande <span>(33cm)</span> {{ pizza.priceEatInGrande }}
-        </p>
-        <p
-          v-if="pizza.selectedOption === 'eatIn'"
-          class="py-2 font-bold text-lg"
-        >
-          Individual <span>(26cm)</span> {{ pizza.priceEatInIndividual }}
-        </p>
-        <p
-          v-if="pizza.selectedOption === 'toGo'"
-          class="py-2 font-bold text-lg"
-        >
-          Price (To Go, Grande): {{ pizza.priceToGoGrande }}
-        </p>
-        <p
-          v-if="pizza.selectedOption === 'toGo'"
-          class="py-2 font-bold text-lg"
-        >
-          Price (To Go, Individual): {{ pizza.priceToGoIndividual }}
-        </p>
-        <div v-html="pizza.extraInformation" class="pt-4"></div>
-      </article>
+          <!-- Pizza display with name and ingredients -->
+          <div class="sm:grid sm:grid-cols-3">
+            <div>
+              <h3 class="pb-2 xs:text-center xs:pb-6 sm:text-2xl">
+                {{ pizza.name }}
+              </h3>
+              <div class="test">
+                <div
+                  v-html="pizza.ingredients"
+                  class="pizza-ingredients pb-4"
+                  id="pizza-ingredients"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Grande Eat-in Prices -->
+            <div
+              v-if="pizza.selectedOption === 'eatIn'"
+              class="py-2 font-bold text-lg xs:text-center"
+            >
+              Grande <span class="sm:block sm:text-xs">(33cm)</span>
+              {{ pizza.priceEatInGrande }}
+            </div>
+
+            <!-- Individual Eat-in Prices -->
+            <div
+              v-if="pizza.selectedOption === 'eatIn'"
+              class="py-2 font-bold text-lg xs:text-center"
+            >
+              Individual <span class="sm:block sm:text-xs">(26cm)</span>
+              {{ pizza.priceEatInIndividual }}
+            </div>
+
+            <!-- Grande Takeout Prices -->
+            <div
+              v-if="pizza.selectedOption === 'toGo'"
+              class="py-2 font-bold text-lg xs:text-center"
+            >
+              Grande <span class="sm:block sm:text-xs">(33cm)</span
+              >{{ pizza.priceToGoGrande }}
+            </div>
+
+            <!-- Individual TakeOut Prices -->
+            <div
+              v-if="pizza.selectedOption === 'toGo'"
+              class="py-2 font-bold text-lg xs:text-center"
+            >
+              Individual <span class="sm:block sm:text-xs">(26cm)</span>
+              {{ pizza.priceToGoIndividual }}
+            </div>
+          </div>
+          <div v-html="pizza.extraInformation" class="pt-4"></div>
+        </article>
+      </div>
     </div>
   </section>
 </template>

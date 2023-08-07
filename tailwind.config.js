@@ -17,6 +17,13 @@ module.exports = {
         postresBg: '#327B3C',
         locationBg: '#F4D3A1',
       },
+      screens: {
+        xs: '420px',
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+      },
     },
   },
   variants: {

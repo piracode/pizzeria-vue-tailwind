@@ -1,41 +1,43 @@
 <template>
   <section class="bg-aboutBg text-white" id="quienes-somos">
-    <h2 class="text-center p-12">Quienes Somos</h2>
-    <article class="">
-      <PizzaSVG class="mx-auto" />
-      <h3 class="font-lato-900 text-base py-6 text-center">
-        {{ passionTitle }}
-      </h3>
-      <p class="pb-12 px-6">{{ passionDescription }}</p>
-    </article>
-    <article class="">
-      <QualityBadgeSVG class="mx-auto" />
-      <h3 class="font-lato-900 text-base py-6 text-center">
-        {{ qualityTitle }}
-      </h3>
-      <p class="pb-12 px-6">{{ qualityDescription }}</p>
-    </article>
-    <article class="">
-      <HeartSVG class="mx-auto" />
-      <h3 class="font-lato-900 text-base py-6 text-center">
-        {{ thankYouTitle }}
-      </h3>
-      <p class="pb-12 px-6">{{ thankYouDescription }}</p>
-    </article>
+    <h2 class="text-center md:w-full p-12 sm:pb-16">Quienes Somos</h2>
+    <div class="lg:flex sm:pb-14">
+      <article class="flex-1 xs:mx-auto xs:max-w-screen-xs">
+        <PizzaSVG class="mx-auto" />
+        <h3 class="font-lato-900 text-base py-6 text-center">
+          {{ passionTitle }}
+        </h3>
+        <p class="pb-12 px-6">{{ passionDescription }}</p>
+      </article>
+      <article class="flex-1 xs:mx-auto xs:max-w-screen-xs">
+        <QualityBadgeSVG class="mx-auto" />
+        <h3 class="font-lato-900 text-base py-6 text-center">
+          {{ qualityTitle }}
+        </h3>
+        <p class="pb-12 px-6">{{ qualityDescription }}</p>
+      </article>
+      <article class="flex-1 xs:mx-auto xs:max-w-screen-xs">
+        <HeartSVG class="mx-auto" />
+        <h3 class="font-lato-900 text-base py-6 text-center">
+          {{ thankYouTitle }}
+        </h3>
+        <p class="pb-12 px-6">{{ thankYouDescription }}</p>
+      </article>
+    </div>
   </section>
-  <section class="bg-aboutBg pb-8">
+  <section class="bg-aboutBg pb-8 lg:flex">
     <img
-      class="max-w-md mx-auto w-full px-6 pb-6"
+      class="max-w-md mx-auto w-full px-6 pb-6 md:w-1/2 lg:w-1/3"
       src="@/assets/pizzeria_1.webp"
       alt="Annie Y Manuel, dueños de la pizzeria l'Arena"
     />
     <img
-      class="max-w-md mx-auto w-full px-6 pb-6"
+      class="max-w-md mx-auto w-full px-6 pb-6 md:w-1/2 lg:w-1/3"
       src="@/assets/pizzeria_2.webp"
       alt="Annie Y Manuel y Martha, dueños de la pizzeria l'Arena"
     />
     <img
-      class="max-w-md mx-auto w-full px-6 pb-6"
+      class="max-w-md mx-auto w-full px-6 pb-6 md:w-1/2 lg:w-1/3"
       src="@/assets/pizzeria_3.webp"
       alt="Fachada de la pizzeria l'Arena"
     />
