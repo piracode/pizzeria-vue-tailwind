@@ -27,7 +27,7 @@
       </div>
 
       <!-- Pizza Card -->
-      <div class="lg:grid lg:grid-cols-2">
+      <div class="lg:grid lg:grid-cols-2 xxl:xxl:max-w-7xl mx-auto">
         <article
           v-for="pizza in filteredPizzas"
           :key="pizza.name"
