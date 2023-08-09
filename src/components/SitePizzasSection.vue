@@ -13,7 +13,7 @@
           <select
             v-model="selectedCategoryId"
             @change="filterPizzasByCategory"
-            class="rounded border border-gray-300 focus:outline-none focus:border-green-500 p-2"
+            class="rounded border border-gray-300 focus:outline-none focus:border-green-500 p-2 hover:bg-orange-200 transition duration-300 ease-in-out cursor-pointer"
           >
             <option
               v-for="category in categories"
@@ -43,7 +43,7 @@
             <div class="flex justify-center items-center pb-2">
               <select
                 v-model="pizza.selectedOption"
-                class="bg-aboutBg text-white rounded p-2"
+                class="bg-aboutBg text-white rounded p-2 hover:bg-green-900 transition duration-300 ease-in-out cursor-pointer"
               >
                 <option value="eatIn">Comedor</option>
                 <option value="toGo">Para llevar</option>

@@ -39,7 +39,7 @@
       <article
         class="p-4 m-4 bg-pizzaCardBg rounded-md drop-shadow-md text-black"
       >
-        <h3 class="pb-4 text-center">Gluten-Free Crepes</h3>
+        <h3 class="pb-4 text-center">Crêpes sin gluten</h3>
         <ul>
           <li class="pb-2">
             A eligir entre las crêpes dulces o saladas (pueden contener trazas

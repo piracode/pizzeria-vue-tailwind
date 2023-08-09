@@ -12,7 +12,7 @@
         <a
           href="#pizzas"
           @click="scrollToSection('#pizzas')"
-          class="bg-orangeCTA pt-2 pb-2 pr-4 pl-4 rounded-2xl flex items-center text-white font-playfair-500 text-xl"
+          class="bg-orangeCTA hover:bg-orange-800 pt-2 pb-2 pr-4 pl-4 rounded-2xl flex items-center text-white font-playfair-500 text-xl"
         >
           <span class="mr-2">Nuestras pizzas</span>
           <RightArrowSVG class="w-4 h-4" />

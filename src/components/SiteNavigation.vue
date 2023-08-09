@@ -7,7 +7,10 @@
         <span>
           <PhoneSVGIcon />
         </span>
-        <a href="tel:964313991" class="text-redCustom font-bold ml-2">
+        <a
+          href="tel:964313991"
+          class="text-redCustom font-bold ml-2 hover:text-red-500"
+        >
           964 31 39 91
         </a>
       </div>
@@ -16,9 +19,15 @@
       >
         <div class="logo">
           <!-- Logo Image -->
-          <img src="@/assets/pizzeria-logo.png" alt="Logo" class="w-40" />
+          <a href="#">
+            <img
+              src="@/assets/pizzeria-logo.png"
+              alt="Logo"
+              class="w-40 cursor-pointer"
+            />
+          </a>
         </div>
-        <div class="menu-icon" @click="toggleMenu">
+        <div class="menu-icon cursor-pointer" @click="toggleMenu">
           <!-- Hamburger Menu SVG Icon -->
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +61,10 @@
           >
             <!-- Navigation Links -->
             <li class="pt-8">
-              <a href="#promocion" @click="closeMenuAndScroll('#promocion')"
+              <a
+                href="#promocion"
+                @click="closeMenuAndScroll('#promocion')"
+                class="hover:bg-green-950 transition duration-300 ease-in-out py-2 px-4 rounded"
                 >Promoción</a
               >
             </li>
@@ -60,31 +72,44 @@
               <a
                 href="#quienes-somos"
                 @click="closeMenuAndScroll('#quienes-somos')"
+                class="hover:bg-green-950 transition duration-300 ease-in-out py-2 px-4 rounded"
                 >Quienes Somos</a
               >
             </li>
             <li>
-              <a href="#pizzas" @click="closeMenuAndScroll('#pizzas')"
+              <a
+                href="#pizzas"
+                @click="closeMenuAndScroll('#pizzas')"
+                class="hover:bg-green-950 transition duration-300 ease-in-out py-2 px-4 rounded"
                 >Pizzas</a
               >
             </li>
             <li>
-              <a href="#crepes" @click="closeMenuAndScroll('#crepes')"
+              <a
+                href="#crepes"
+                @click="closeMenuAndScroll('#crepes')"
+                class="hover:bg-green-950 transition duration-300 ease-in-out py-2 px-4 rounded"
                 >Crêpes</a
               >
             </li>
             <li>
-              <a href="#postres" @click="closeMenuAndScroll('#postres')"
+              <a
+                href="#postres"
+                @click="closeMenuAndScroll('#postres')"
+                class="hover:bg-green-950 transition duration-300 ease-in-out py-2 px-4 rounded"
                 >Postres</a
               >
             </li>
             <li>
-              <a href="#ubicacion" @click="closeMenuAndScroll('#ubicacion')"
+              <a
+                href="#ubicacion"
+                @click="closeMenuAndScroll('#ubicacion')"
+                class="hover:bg-green-950 transition duration-300 ease-in-out py-2 px-4 rounded"
                 >Ubicación</a
               >
             </li>
             <li
-              class="bg-orangeCTA pt-2 pb-2 pr-4 pl-4 rounded-2xl mt-8 mb-12 font-playfair-500 text-xl"
+              class="bg-orangeCTA hover:bg-orange-600 pt-2 pb-2 pr-4 pl-4 rounded-2xl mt-8 mb-12 font-playfair-500 text-xl"
             >
               <a
                 href="#pizzas"
@@ -143,6 +168,11 @@ export default {
 .slide-leave-active {
   transition: transform 0.3s ease-in-out;
 }
+
+.slide-leave-active {
+  transition: transform 0.7s ease-in-out;
+}
+
 .slide-enter,
 .slide-leave-to {
   transform: translateX(100%);

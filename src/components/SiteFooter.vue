@@ -7,17 +7,35 @@
         <h3 class="pb-4">Explorar</h3>
         <ul>
           <!-- Navigation Links -->
-          <li>
-            <a href="#pizzas" @click="scrollToSection('#pizzas')">Pizzas</a>
+          <li class="py-2">
+            <a
+              href="#pizzas"
+              @click="scrollToSection('#pizzas')"
+              class="hover:bg-green-950 transition duration-300 ease-in-out py-2 px-4 rounded"
+              >Pizzas</a
+            >
           </li>
-          <li>
-            <a href="#crepes" @click="scrollToSection('#crepes')">Crêpes</a>
+          <li class="py-2">
+            <a
+              href="#crepes"
+              @click="scrollToSection('#crepes')"
+              class="hover:bg-green-950 transition duration-300 ease-in-out py-2 px-4 rounded"
+              >Crêpes</a
+            >
           </li>
-          <li>
-            <a href="#postres" @click="scrollToSection('#postres')">Postres</a>
+          <li class="py-2">
+            <a
+              href="#postres"
+              @click="scrollToSection('#postres')"
+              class="hover:bg-green-950 transition duration-300 ease-in-out py-2 px-4 rounded"
+              >Postres</a
+            >
           </li>
-          <li>
-            <a href="#promocion" @click="scrollToSection('#promocion')"
+          <li class="py-2">
+            <a
+              href="#promocion"
+              @click="scrollToSection('#promocion')"
+              class="hover:bg-green-950 transition duration-300 ease-in-out py-2 px-4 rounded"
               >Promoción</a
             >
           </li>
@@ -54,7 +72,7 @@
           </svg>
         </div>
         <div class="pb-4">
-          <a href="tel:+34964313991">964 31 39 91</a>
+          <a href="tel:+34964313991" class="hover:text-red-400">964 31 39 91</a>
         </div>
         <!-- Email Icon SVG -->
         <div class="flex items-center justify-center pb-2">
@@ -71,7 +89,9 @@
           </svg>
         </div>
         <div class="pb-20">
-          <a href="mailto:annieymanuel@pizzerialarena.es"
+          <a
+            href="mailto:annieymanuel@pizzerialarena.es"
+            class="hover:text-red-400"
             >annieymanuel@pizzerialarena.es</a
           >
         </div>
