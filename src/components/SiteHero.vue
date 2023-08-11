@@ -11,7 +11,7 @@
       <div class="flex justify-center">
         <a
           href="#pizzas"
-          @click="scrollToSection('#pizzas')"
+          @click="closeMenuAndScroll('#pizzas')"
           class="bg-orangeCTA hover:bg-orange-800 pt-2 pb-2 pr-4 pl-4 rounded-2xl flex items-center text-white font-playfair-500 text-xl"
         >
           <span class="mr-2">Nuestras pizzas</span>
@@ -25,21 +25,21 @@
 <script>
 import axios from 'axios'
 import RightArrowSVG from '@/components/RightArrowSVG.vue'
-import { scrollWithOffset } from '@/components/scrollUtils.js'
+import { closeMenuAndScroll } from '@/components/scrollUtils.js'
 export default {
+  props: ['fixedHeaderHeight'],
   data() {
     return {
       heroTitle: '',
       heroDescription: '',
-      headerOffset: 160,
     }
   },
   components: {
     RightArrowSVG,
   },
   methods: {
-    scrollToSection(sectionId) {
-      scrollWithOffset(sectionId, this.headerOffset)
+    closeMenuAndScroll(sectionId) {
+      closeMenuAndScroll(sectionId, this.fixedHeaderHeight)
     },
   },
   mounted() {

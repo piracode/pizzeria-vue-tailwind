@@ -1,6 +1,6 @@
 <template>
   <section class="bg-pizzasBg text-white pb-10 pizza-section" id="pizzas">
-    <h2 class="text-center p-12">Pizzas</h2>
+    <h2 class="text-center p-12">Nuestras Pizzas</h2>
     <div class="text-black">
       <!-- Dropdown to select category -->
       <div class="mb-6 sm:flex sm:gap-6 justify-center">

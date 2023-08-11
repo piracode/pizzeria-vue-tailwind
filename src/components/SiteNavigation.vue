@@ -63,6 +63,7 @@
             <li class="pt-8">
               <a
                 href="#promocion"
+                ref="promocion"
                 @click="closeMenuAndScroll('#promocion')"
                 class="hover:bg-green-950 transition duration-300 ease-in-out py-2 px-4 rounded"
                 >Promoción</a
@@ -132,7 +133,7 @@
 import SiteHeader from '@/components/SiteHeader.vue'
 import PhoneSVGIcon from '@/components/PhoneSVGIcon.vue'
 import RightArrowSVG from '@/components/RightArrowSVG.vue'
-import { scrollWithOffset } from '@/components/scrollUtils.js'
+import { closeMenuAndScroll } from '@/components/scrollUtils.js'
 
 export default {
   data() {
@@ -151,7 +152,8 @@ export default {
     },
     closeMenuAndScroll(sectionId) {
       this.menuOpen = false
-      scrollWithOffset(sectionId, this.headerOffset)
+      const fixedHeaderHeight = this.$refs.fixedHeader.offsetHeight
+      closeMenuAndScroll(sectionId, fixedHeaderHeight)
     },
   },
 

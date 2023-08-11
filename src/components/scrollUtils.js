@@ -1,17 +1,16 @@
-// scrollUtils.js
+export function closeMenuAndScroll(sectionId, fixedHeaderHeight) {
+  const section = document.querySelector(sectionId)
 
-export function scrollWithOffset(targetSelector, headerOffset) {
-  const sectionElement = document.querySelector(targetSelector)
-  if (sectionElement) {
-    const scrollToPosition = sectionElement.offsetTop - headerOffset
+  section.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start',
+    inline: 'nearest',
+  })
 
-    const scrollStep = () => {
-      if (window.scrollY !== scrollToPosition) {
-        window.scrollBy(0, (scrollToPosition - window.scrollY) / 10)
-        requestAnimationFrame(scrollStep)
-      }
+  // Delayed adjustment for fixed header
+  setTimeout(() => {
+    if (fixedHeaderHeight) {
+      window.scrollBy(0, -fixedHeaderHeight)
     }
-
-    requestAnimationFrame(scrollStep)
-  }
+  }, 100)
 }

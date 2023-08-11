@@ -10,7 +10,7 @@
           <li class="py-2">
             <a
               href="#pizzas"
-              @click="scrollToSection('#pizzas')"
+              @click="closeMenuAndScroll('#pizzas')"
               class="hover:bg-green-950 transition duration-300 ease-in-out py-2 px-4 rounded"
               >Pizzas</a
             >
@@ -18,7 +18,7 @@
           <li class="py-2">
             <a
               href="#crepes"
-              @click="scrollToSection('#crepes')"
+              @click="closeMenuAndScroll('#crepes')"
               class="hover:bg-green-950 transition duration-300 ease-in-out py-2 px-4 rounded"
               >Crêpes</a
             >
@@ -26,7 +26,7 @@
           <li class="py-2">
             <a
               href="#postres"
-              @click="scrollToSection('#postres')"
+              @click="closeMenuAndScroll('#postres')"
               class="hover:bg-green-950 transition duration-300 ease-in-out py-2 px-4 rounded"
               >Postres</a
             >
@@ -34,7 +34,7 @@
           <li class="py-2">
             <a
               href="#promocion"
-              @click="scrollToSection('#promocion')"
+              @click="closeMenuAndScroll('#promocion')"
               class="hover:bg-green-950 transition duration-300 ease-in-out py-2 px-4 rounded"
               >Promoción</a
             >
@@ -107,18 +107,19 @@
 </template>
 
 <script>
-import { scrollWithOffset } from '@/components/scrollUtils.js'
+import { closeMenuAndScroll } from '@/components/scrollUtils.js'
 
 export default {
+  props: ['fixedHeaderHeight'],
   data() {
     return {
       mapIframe: '<iframe src="..." frameborder="0" allowfullscreen></iframe>',
-      headerOffset: 160,
+      placeholderHeight: 0,
     }
   },
   methods: {
-    scrollToSection(sectionId) {
-      scrollWithOffset(sectionId, this.headerOffset)
+    closeMenuAndScroll(sectionId) {
+      closeMenuAndScroll(sectionId, this.fixedHeaderHeight)
     },
   },
 }
