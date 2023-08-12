@@ -108,6 +108,8 @@
 
 <script>
 import { closeMenuAndScroll } from '@/components/scrollUtils.js'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 export default {
   props: ['fixedHeaderHeight'],
@@ -116,6 +118,12 @@ export default {
       mapIframe: '<iframe src="..." frameborder="0" allowfullscreen></iframe>',
       placeholderHeight: 0,
     }
+  },
+  updated() {
+    // to ensure AOS is initialized after DOM changes
+    this.$nextTick(function () {
+      AOS.refresh()
+    })
   },
   methods: {
     closeMenuAndScroll(sectionId) {

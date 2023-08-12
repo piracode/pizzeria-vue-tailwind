@@ -2,6 +2,7 @@
   <section
     class="relative background-image flex justify-center items-center"
     id="promocion"
+    data-aos="fade-up"
   >
     <div class="relative z-10 p-8 text-black bg-hero max-w-sm rounded-lg">
       <h2 class="text-xl text-center font-bold mb-10">
@@ -26,6 +27,8 @@
 import axios from 'axios'
 import RightArrowSVG from '@/components/RightArrowSVG.vue'
 import { closeMenuAndScroll } from '@/components/scrollUtils.js'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 export default {
   props: ['fixedHeaderHeight'],
   data() {
@@ -53,6 +56,12 @@ export default {
       .catch((error) => {
         console.error(error)
       })
+  },
+  updated() {
+    // to ensure AOS is initialized after DOM changes
+    this.$nextTick(function () {
+      AOS.refresh()
+    })
   },
 }
 </script>

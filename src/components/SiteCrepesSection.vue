@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-crepesBg text-white pb-8" id="crepes">
+  <section class="bg-crepesBg text-white pb-8" id="crepes" data-aos="fade-up">
     <h2 class="text-center py-12">Nuestras crêpes</h2>
     <div class="lg:grid sm:grid-cols-3">
       <article
@@ -53,6 +53,8 @@
 
 <script>
 import axios from 'axios'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 export default {
   data() {
@@ -66,7 +68,12 @@ export default {
     this.fetchCrepesByCategory(12, 'sweetCrepes')
     this.fetchCrepesByCategory(11, 'savoryCrepes')
   },
-
+  updated() {
+    // to ensure AOS is initialized after DOM changes
+    this.$nextTick(function () {
+      AOS.refresh()
+    })
+  },
   methods: {
     fetchCrepesByCategory(categoryId, arrayName) {
       axios

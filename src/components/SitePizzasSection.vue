@@ -1,5 +1,9 @@
 <template>
-  <section class="bg-pizzasBg text-white pb-10 pizza-section" id="pizzas">
+  <section
+    class="bg-pizzasBg text-white pb-10 pizza-section"
+    id="pizzas"
+    data-aos="fade-up"
+  >
     <h2 class="text-center p-12">Nuestras Pizzas</h2>
     <div class="text-black">
       <!-- Dropdown to select category -->
@@ -111,6 +115,8 @@
 
 <script>
 import axios from 'axios'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 export default {
   data() {
     return {
@@ -138,6 +144,7 @@ export default {
         this.selectedCategoryName =
           this.categoryNameMap[this.selectedCategoryId] || ''
       }
+      // AOS.refresh()
     },
   },
   components: {},
@@ -157,6 +164,8 @@ export default {
   },
 
   mounted() {
+    // Initialize AOS
+    AOS.init()
     // Fetch Pizzas and categories
     axios
       .get(
@@ -217,6 +226,12 @@ export default {
       .catch((error) => {
         console.error(error)
       })
+  },
+  updated() {
+    // to ensure AOS is initialized after DOM changes
+    this.$nextTick(function () {
+      AOS.refresh()
+    })
   },
 }
 </script>
