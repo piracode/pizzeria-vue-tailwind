@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-blackCustom" data-aos="fade-up">
+  <header class="bg-blackCustom">
     <!-- <div class="fixed-header" ref="fixedHeader"></div> -->
     <div :style="{ height: placeholderHeight + 'px' }"></div>
     <div class="fixed top-0 z-50 fixed-header" ref="fixedHeader">

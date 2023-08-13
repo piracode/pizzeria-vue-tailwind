@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-locationBg pb-12" id="ubicacion">
+  <section class="bg-locationBg pb-12" id="ubicacion" data-aos="fade-up">
     <h2 class="text-center py-12">Ubicación</h2>
     <p class="text-2xl font-bold text-center font-playfair pb-12 text-aboutBg">
       Pizzería l'Arena
@@ -62,6 +62,8 @@
 </template>
 
 <script>
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 export default {
   data() {
     return {
@@ -69,7 +71,12 @@ export default {
         '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d763.1235565039603!2d0.1411763349804166!3d40.08669257288649!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9a3d171828fa2bda!2sPizzeria+L\'Arena!5e0!3m2!1ses!2sar!4v1522416723208" class="iframe" width="1920" height="300" frameborder="0" zoom="16" style="border:0; max-width: 100% !important;" allowfullscreen=""></iframe>',
     }
   },
-  components: {},
+  updated() {
+    // to ensure AOS is initialized after DOM changes
+    this.$nextTick(function () {
+      AOS.refresh()
+    })
+  },
 }
 </script>
 

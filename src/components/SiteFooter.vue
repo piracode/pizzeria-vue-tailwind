@@ -1,5 +1,8 @@
 <template>
-  <section class="bg-blackCustom text-center text-white py-10">
+  <section
+    class="bg-blackCustom text-center text-white py-10"
+    data-aos="fade-up"
+  >
     <!-- <div class="flex justify-between pb-10"> -->
     <div class="md:grid md:grid-cols-3">
       <!-- <nav class="footer-nav pl-4"> -->
