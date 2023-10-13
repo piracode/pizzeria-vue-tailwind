@@ -26,19 +26,20 @@
     </div>
   </section>
   <section class="bg-aboutBg pb-8 lg:flex">
+    <!--   src="@/assets/pizzeria_1.webp" -->
     <img
       class="max-w-md mx-auto w-full px-6 pb-6 md:w-1/2 lg:w-1/3"
-      src="@/assets/pizzeria_1.webp"
+      src="/img/pizzeria_1.webp"
       alt="Annie Y Manuel, dueños de la pizzeria l'Arena"
     />
     <img
       class="max-w-md mx-auto w-full px-6 pb-6 md:w-1/2 lg:w-1/3"
-      src="@/assets/pizzeria_2.webp"
+      src="/img/pizzeria_2.webp"
       alt="Annie Y Manuel y Martha, dueños de la pizzeria l'Arena"
     />
     <img
       class="max-w-md mx-auto w-full px-6 pb-6 md:w-1/2 lg:w-1/3"
-      src="@/assets/pizzeria_3.webp"
+      src="/img/pizzeria_3.webp"
       alt="Fachada de la pizzeria l'Arena"
     />
   </section>

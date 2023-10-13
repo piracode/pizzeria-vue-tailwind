@@ -20,8 +20,9 @@
         <div class="logo">
           <!-- Logo Image -->
           <a href="#">
+            <!--  src="@/assets/pizzeria-logo.png" -->
             <img
-              src="@/assets/pizzeria-logo.png"
+              src="/img/pizzeria-logo.png"
               alt="Logo"
               class="w-40 cursor-pointer"
             />
