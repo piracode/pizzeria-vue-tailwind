@@ -68,7 +68,7 @@ export default {
 
 <style scoped>
 .background-image {
-  background-image: url('~@/assets/hero.webp');
+  background-image: url('~@/assets/hero-600.webp');
   /* background-image: url('/hero.webp'); */
   background-size: cover;
   background-position: center center;
