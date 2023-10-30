@@ -34,7 +34,7 @@
       <!-- Pizza Card -->
       <div class="lg:grid lg:grid-cols-2 xxl:xxl:max-w-7xl mx-auto">
         <article
-          v-for="pizza in filteredPizzas"
+          v-for="pizza in displayedPizzas"
           :key="pizza.name"
           class="p-4 m-4 bg-pizzaCardBg rounded-md drop-shadow-md"
         >
@@ -110,6 +110,29 @@
           <div v-html="pizza.extraInformation" class="pt-4"></div>
         </article>
       </div>
+      <!-- Button to trigger pagination -->
+      <div
+        v-infinite-scroll="loadMore"
+        infinite-scroll-disabled="loading"
+        infinite-scroll-distance="scrollDistance"
+      >
+        <button
+          v-if="!loading && !allPizzasDisplayed"
+          @click="loadMore"
+          class="bg-orange-500 text-white rounded-lg px-4 py-2 mx-auto block"
+        >
+          Cargar más pizzas
+        </button>
+        <div v-else class="text-center text-white">
+          <p
+            v-text="
+              allPizzasDisplayed
+                ? '¡Todas las pizzas ya están mostradas!'
+                : 'Cargando...'
+            "
+          />
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -126,6 +149,10 @@ export default {
       selectedCategoryId: null,
       selectedCategoryName: '',
       filteredPizzas: [],
+      displayedPizzas: [],
+      visiblePizzaCount: 6, // Set the number of visible pizzas
+      loading: false,
+      allPizzasDisplayed: false,
     }
   },
   methods: {
@@ -145,9 +172,22 @@ export default {
         this.selectedCategoryName =
           this.categoryNameMap[this.selectedCategoryId] || ''
       }
-      // AOS.refresh()
+    },
+    loadMore() {
+      // Load more pizzas
+      if (this.visiblePizzaCount < this.pizzas.length) {
+        this.visiblePizzaCount += 6 // Load 6 more pizzas at a time
+        this.updateDisplayedPizzas()
+      } else {
+        // All pizzas have been loaded
+        this.allPizzasDisplayed = true
+      }
+    },
+    updateDisplayedPizzas() {
+      this.displayedPizzas = this.pizzas.slice(0, this.visiblePizzaCount)
     },
   },
+
   components: {},
   computed: {
     categoryNameMap() {
@@ -167,18 +207,16 @@ export default {
   mounted() {
     // Initialize AOS
     AOS.init()
+
     // Fetch Pizzas and categories
     axios
       .get(
         'https://martha.codes/pizzeria/wp-json/wp/v2/pizza?categoria-de-pizza=2&per_page=100'
       )
       .then((response) => {
-        // console.log(response.data)
         // Extract the unique category IDs from the response
         const categoryIds = [
-          //spread ooperator to create a new array + new Set to remove duplicate
           ...new Set(
-            //extract all the category id into one single array
             response.data.flatMap((pizza) => pizza['categoria-de-pizza'])
           ),
         ]
@@ -217,10 +255,13 @@ export default {
             categoriaDePizza,
           })
         })
+
+        // Determine the initial number of pizzas to display (5 or 6)
+        this.visiblePizzaCount = Math.min(this.pizzas.length, 6)
+        this.updateDisplayedPizzas()
+
         // Set all the fetched pizzas to the filteredPizzas array to display them by default
         this.filteredPizzas = this.pizzas
-        // Reverse the filteredPizzas array to display them correctly
-        this.filteredPizzas.reverse()
 
         this.selectedCategoryId = 2
       })
@@ -228,6 +269,7 @@ export default {
         console.error(error)
       })
   },
+
   updated() {
     // to ensure AOS is initialized after DOM changes
     this.$nextTick(function () {
