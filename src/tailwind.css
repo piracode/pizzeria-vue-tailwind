@@ -108,3 +108,20 @@
 body {
   background-color: #1c1a1a;
 }
+
+:focus,
+.logo a:focus,
+.logo img:focus {
+  outline: 4px solid rgb(255, 102, 0);
+}
+
+.skip-link a {
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: -1;
+}
