@@ -118,7 +118,8 @@ export default {
   props: ['fixedHeaderHeight'],
   data() {
     return {
-      mapIframe: '<iframe src="..." frameborder="0" allowfullscreen></iframe>',
+      mapIframe:
+        '<iframe src="..." frameborder="0" allowfullscreen title="Mapa de Google"></iframe>',
       placeholderHeight: 0,
     }
   },

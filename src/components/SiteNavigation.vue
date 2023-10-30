@@ -1,6 +1,10 @@
 <template>
   <header class="bg-blackCustom">
     <!-- <div class="fixed-header" ref="fixedHeader"></div> -->
+    <div class="skip-link">
+      <a href="#pizzas">Skip to Pizzas</a>
+    </div>
+
     <div :style="{ height: placeholderHeight + 'px' }"></div>
     <div class="fixed top-0 z-50 fixed-header" ref="fixedHeader">
       <div class="flex justify-center items-center py-4">
@@ -15,16 +19,17 @@
         </a>
       </div>
       <nav
-        class="flex justify-between p-4 border-t-2 border-b-2 mr-6 ml-6 border-lightGrey relative"
+        class="flex justify-between items-center p-4 border-t-2 border-b-2 mr-6 ml-6 border-lightGrey relative"
       >
         <div class="logo">
           <!-- Logo Image -->
-          <a href="#">
+          <a href="#top">
             <!--  src="@/assets/pizzeria-logo.png" -->
             <img
               src="/img/pizzeria-logo.png"
               alt="Logo"
-              class="w-40 cursor-pointer"
+              class="w-44 cursor-pointer md:w-60 lg:w-80"
+              tabindex="0"
             />
           </a>
         </div>
@@ -35,6 +40,11 @@
             width="30"
             height="30"
             viewBox="0 0 30 30"
+            role="button"
+            aria-label="Toggle Menu"
+            tabindex="0"
+            @keydown.enter="toggleMenu"
+            @keydown.space="toggleMenu"
           >
             <!-- Cross icon path (only shown when menuOpen is true) -->
             <path
