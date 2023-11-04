@@ -28,7 +28,7 @@
             <img
               src="/img/pizzeria-logo.png"
               alt="Logo"
-              class="w-44 cursor-pointer md:w-60 lg:w-80"
+              class="w-44 cursor-pointer md:w-60"
               tabindex="0"
             />
           </a>

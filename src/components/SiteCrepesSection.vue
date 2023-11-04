@@ -1,5 +1,6 @@
 <template>
-  <section class="bg-crepesBg text-white pb-8" id="crepes" data-aos="fade-up">
+  <section class="bg-crepesBg text-white pb-8" data-aos="fade-up">
+    <div class="relative -top-[5.5rem]" id="crepes" aria-label="Crepes"></div>
     <h2 class="text-center py-12">Nuestras crêpes</h2>
     <div class="lg:grid sm:grid-cols-3">
       <article

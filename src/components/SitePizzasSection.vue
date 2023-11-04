@@ -1,9 +1,9 @@
 <template>
   <section
     class="bg-pizzasBg text-white pb-10 pizza-section"
-    id="pizzas"
     data-aos="fade-up"
   >
+    <div class="relative -top-[5.5rem]" id="pizzas" aria-label="Pizzas"></div>
     <h2 class="text-center p-12">Nuestras Pizzas</h2>
     <div class="text-black">
       <!-- Dropdown to select category -->

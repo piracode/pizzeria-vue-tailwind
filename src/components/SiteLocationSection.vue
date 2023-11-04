@@ -1,5 +1,10 @@
 <template>
-  <section class="bg-locationBg pb-12" id="ubicacion" data-aos="fade-up">
+  <section class="bg-locationBg pb-12" data-aos="fade-up">
+    <div
+      class="relative -top-[5.5rem]"
+      id="ubicacion"
+      aria-label="Ubicación"
+    ></div>
     <h2 class="text-center py-12">Ubicación</h2>
     <p class="text-2xl font-bold text-center font-playfair pb-12 text-aboutBg">
       Pizzería l'Arena
